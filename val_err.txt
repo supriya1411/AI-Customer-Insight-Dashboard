@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<string>", line 5, in <module>
+  File "C:\Users\Supriya\Desktop\AI customer\backend\app\data\data_loader.py", line 4, in <module>
+    import pandas as pd
+  File "C:\Users\Supriya\Desktop\AI customer\backend\venv\lib\site-packages\pandas\__init__.py", line 31, in <module>
+    raise ImportError(
+ImportError: Unable to import required dependencies:
+numpy: Error importing numpy: you should not try to import numpy from
+        its source directory; please exit the numpy source tree, and relaunch
+        your python interpreter from there.
