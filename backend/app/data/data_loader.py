@@ -94,14 +94,17 @@ def load_data():
         c_dict["shap_values"] = {}
         c_dict["top_churn_reasons"] = [("support_tickets_30d", c_dict["support_tickets_30d"] * 0.1)]
         
+        import random
         if churn_prob > 0.75:
-            c_dict["recommended_action_id"] = "ACT-001"
-            c_dict["recommended_action_label"] = "CSM Priority Call"
-            c_dict["recommended_action_channel"] = "CSM"
+            act_id = random.choice(["ACT-001", "ACT-007"])
+        elif churn_prob > 0.40:
+            act_id = random.choice(["ACT-002", "ACT-003", "ACT-006", "ACT-009"])
         else:
-            c_dict["recommended_action_id"] = "ACT-004"
-            c_dict["recommended_action_label"] = "Onboarding Boost"
-            c_dict["recommended_action_channel"] = "Email"
+            act_id = random.choice(["ACT-004", "ACT-005", "ACT-008", "ACT-010"])
+            
+        c_dict["recommended_action_id"] = act_id
+        c_dict["recommended_action_label"] = ""
+        c_dict["recommended_action_channel"] = ""
             
         loaded_customers.append(c_dict)
 

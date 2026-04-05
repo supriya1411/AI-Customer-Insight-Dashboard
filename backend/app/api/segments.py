@@ -37,12 +37,12 @@ async def churn_distribution() -> List[Dict[str, Any]]:
     """Histogram of churn probability distribution across all customers."""
     customers = get_all_customers()
     buckets = [
-        {"range": "0-10%", "min": 0.0, "max": 0.10, "count": 0},
-        {"range": "10-30%", "min": 0.10, "max": 0.30, "count": 0},
-        {"range": "30-50%", "min": 0.30, "max": 0.50, "count": 0},
-        {"range": "50-70%", "min": 0.50, "max": 0.70, "count": 0},
-        {"range": "70-85%", "min": 0.70, "max": 0.85, "count": 0},
-        {"range": "85-100%", "min": 0.85, "max": 1.01, "count": 0},
+        {"range": "0-1%", "min": 0.0, "max": 0.01, "count": 0},
+        {"range": "1-2%", "min": 0.01, "max": 0.02, "count": 0},
+        {"range": "2-5%", "min": 0.02, "max": 0.05, "count": 0},
+        {"range": "5-10%", "min": 0.05, "max": 0.10, "count": 0},
+        {"range": "10-50%", "min": 0.10, "max": 0.50, "count": 0},
+        {"range": "50-100%", "min": 0.50, "max": 1.01, "count": 0},
     ]
     for c in customers:
         p = c["churn_probability"]

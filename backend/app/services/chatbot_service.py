@@ -112,7 +112,7 @@ def process_chat(message: str, history: List[Any] = None) -> Dict[str, Any]:
         )
 
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-1.5-flash',
             contents=contents,
             config=config
         )
@@ -141,7 +141,7 @@ def process_chat(message: str, history: List[Any] = None) -> Dict[str, Any]:
                     contents.append(types.Content(role="user", parts=[part]))
                     
                     response = client.models.generate_content(
-                        model='gemini-2.5-flash',
+                        model='gemini-1.5-flash',
                         contents=contents,
                         config=config
                     )
